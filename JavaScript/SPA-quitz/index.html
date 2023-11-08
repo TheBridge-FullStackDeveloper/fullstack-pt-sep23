@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>QUITZ SPA</title>
+		<script src="./index.js" defer></script>
+		<style>
+			.hide {
+				display: none;
+			}
+			.color-correct {
+				background-color: rgb(0, 255, 72);
+			}
+
+			.color-wrong {
+				background-color: rgb(255, 0, 0);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="question-container" class="hide">
+			<div id="question">Question</div>
+
+			<div id="answer-buttons"></div>
+		</div>
+		<div class="controls">
+			<button id="start-btn">Start</button>
+			<button id="next-btn" class="hide">Next</button>
+		</div>
+	</body>
+</html>
