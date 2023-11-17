@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mapas</title>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+			integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+			crossorigin=""
+		/>
+		<!-- Make sure you put this AFTER Leaflet's CSS -->
+		<script
+			src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+			integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+			crossorigin=""
+		></script>
+		<style>
+			#map {
+				height: 60vh;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!4v1700242609243!6m8!1m7!1suc1rgTnRozcnmpO8lOENPw!2m2!1d43.25608242806294!2d-2.922960827405447!3f335.454777360379!4f-6.379404972793694!5f0.7820865974627469"
+			width="600"
+			height="450"
+			style="border: 0"
+			allowfullscreen=""
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+		></iframe>
+		<script src="./data.js"></script>
+		<script src="./index.js"></script>
+	</body>
+</html>
