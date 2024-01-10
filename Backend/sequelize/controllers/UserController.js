@@ -9,6 +9,7 @@ const UserController = {
 		try {
 			req.body.role = 'user'
 			const password = await bcrypt.hashSync(req.body.password, 10)
+
 			const user = await User.create({ ...req.body, password: password })
 			res.status(201).send({ message: 'Usuario creado con éxito', user })
 		} catch (error) {
