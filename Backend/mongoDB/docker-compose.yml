@@ -1,23 +1,23 @@
 version: '3.6'
 
 services:
-  apimongodb:
-    container_name: apimongodb
+  testmongodb:
+    container_name: testmongodb
     build:
       context: ./
       dockerfile: Dockerfile
     volumes:
-      - ./:/api-root/src
+      - ./:/root
     healthcheck:
       disable: true
     restart: unless-stopped
     ports:
       - 3001:3001
     tty: true
-  dbmongo:
+  mongotest:
     image: mongo:latest
     ports:
-      - 27017:27017
+      - 27018:27018
     environment:
       MONGO_INITDB_ROOT_USERNAME: arantzafrontend
       MONGO_INITDB_ROOT_PASSWORD: K5u4vm8g37JeGjnN
