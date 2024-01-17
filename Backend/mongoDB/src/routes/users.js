@@ -6,5 +6,6 @@ const { authentication } = require('../middlewares/authentication')
 router.post('/register', controllerdelqueseadeuser.register)
 router.post('/login', controllerdelqueseadeuser.login)
 router.delete('/logout', authentication, controllerdelqueseadeuser.logout)
+router.get('/info', authentication, controllerdelqueseadeuser.getInfo)
 
 module.exports = router
