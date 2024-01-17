@@ -14,7 +14,11 @@ const ProductController = {
 	},
 	async getAll(req, res) {
 		try {
+			const { page = 1, limit = 10 } = req.query
 			const products = await Product.find()
+				.populate('reviews.userId')
+				.limit(limit)
+				.skip((page - 1) * limit)
 			res.status(200).send(products)
 		} catch (error) {
 			console.error(error)
@@ -69,6 +73,23 @@ const ProductController = {
 			res.status(201).send(product)
 		} catch (error) {
 			res.status(500).send(error)
+		}
+	},
+	async insertComment(req, res) {
+		try {
+			const product = await Product.findByIdAndUpdate(
+				req.params._id,
+				{
+					$push: {
+						reviews: { comment: req.body.comment, userId: req.user._id },
+					},
+				},
+				{ new: true }
+			)
+			res.send(product)
+		} catch (error) {
+			console.error(error)
+			res.status(500).send({ message: 'There was a problem with your review' })
 		}
 	},
 }
