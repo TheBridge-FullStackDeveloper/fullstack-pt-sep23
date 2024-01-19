@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const ObjectId = mongoose.SchemaTypes.ObjectId
+const ObjectId = mongoose.Schema.Types.ObjectId
+// const ObjectId = mongoose.SchemaTypes.ObjectId
 
 const ProductSchema = new mongoose.Schema(
 	{
@@ -11,6 +12,7 @@ const ProductSchema = new mongoose.Schema(
 				comment: String,
 			},
 		],
+		likes: [{ type: ObjectId }],
 	},
 
 	{ timestamps: true }
