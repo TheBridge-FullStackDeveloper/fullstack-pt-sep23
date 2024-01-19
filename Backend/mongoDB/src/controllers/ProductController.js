@@ -1,4 +1,5 @@
 const Product = require('../models/Product')
+const User = require('../models/User')
 
 const ProductController = {
 	async create(req, res) {
@@ -90,6 +91,24 @@ const ProductController = {
 		} catch (error) {
 			console.error(error)
 			res.status(500).send({ message: 'There was a problem with your review' })
+		}
+	},
+	async like(req, res) {
+		try {
+			const product = await Product.findByIdAndUpdate(
+				req.params.productId,
+				{ $push: { likes: req.user._id } },
+				{ new: true }
+			)
+			await User.findByIdAndUpdate(
+				req.user._id,
+				{ $push: { wishList: req.params.productId } },
+				{ new: true }
+			)
+			res.send(product)
+		} catch (error) {
+			console.error(error)
+			res.status(500).send({ message: 'There was a problem with your request' })
 		}
 	},
 }
