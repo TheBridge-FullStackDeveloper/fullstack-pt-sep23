@@ -1,6 +1,8 @@
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
-const { jwt_secret } = require('../config/keys')
+require('dotenv').config()
+
+// const { jwt_secret } = require('../config/keys')
 
 const UserController = {
 	async register(req, res, next) {
@@ -17,7 +19,7 @@ const UserController = {
 			const user = await User.findOne({
 				email: req.body.email,
 			})
-			const token = jwt.sign({ _id: user._id }, jwt_secret)
+			const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET)
 
 			if (user.tokens.length > 4) user.tokens.shift()
 
