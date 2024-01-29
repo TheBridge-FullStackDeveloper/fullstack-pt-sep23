@@ -1,7 +1,4 @@
+.DS_Store
 node_modules/
-config/keys.js
-.npm/
-
+.vscode/
 .env
-.env.local
-
