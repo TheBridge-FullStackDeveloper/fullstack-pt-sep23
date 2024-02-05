@@ -1,0 +1,20 @@
+@import './abstracts/colors.scss';
+@import './abstracts/mixins.scss';
+@import './base/base';
+
+h1.invertido {
+	font-size: 1.3rem;
+	padding: 1rem;
+	@include color-invertido(red);
+}
+
+div.invertido {
+	padding: 5px;
+	@include color-invertido;
+}
+blockquote {
+	margin: 2rem 3eem;
+	padding: 1.5rem;
+	text-align: center;
+	@include color-invertido;
+}

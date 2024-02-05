@@ -1,0 +1,4 @@
+@mixin color-invertido($color: #111) {
+	background-color: $color;
+	color: #eee;
+}
