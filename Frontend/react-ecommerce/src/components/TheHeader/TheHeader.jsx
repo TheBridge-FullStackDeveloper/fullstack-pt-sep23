@@ -42,6 +42,10 @@ const TheHeader = () => {
 							<UserOutlined />
 							<Link to="/profile">Profile</Link>
 						</span>
+						<span className="menu-item">
+							<UserOutlined />
+							<Link to="/admin">Admin</Link>
+						</span>
 					</>
 				) : (
 					<span className="menu-item">
