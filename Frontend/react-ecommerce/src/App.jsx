@@ -5,6 +5,7 @@ import { OrdersProvider } from './context/OrdersContext/OrdersState'
 import Login from './components/Login/Login'
 import Profile from './components/Profile/Profile'
 import Products from './components/Products/Products'
+import Admin from './components/Admin/Admin'
 import Cart from './components/Cart/Cart'
 import TheHeader from './components/TheHeader/TheHeader'
 import './App.scss'
@@ -20,6 +21,7 @@ function App() {
 							<Route path="/" element={<Login />} />
 							<Route path="/profile" element={<Profile />} />
 							<Route path="/products" element={<Products />} />
+							<Route path="/admin" element={<Admin />} />
 							<Route path="/cart" element={<Cart />} />
 						</Routes>
 					</Router>
