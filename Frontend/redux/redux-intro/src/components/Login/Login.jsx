@@ -39,7 +39,6 @@ const Login = () => {
     e.preventDefault()
     dispatch(login(formData))
     console.log('formData', formData)
-    // navigate('/profile')
   }
   return (
     <form onSubmit={onSubmit}>

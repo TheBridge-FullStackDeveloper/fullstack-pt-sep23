@@ -49,10 +49,6 @@ const Register = () => {
         description: 'Passwords do not match',
       })
     } else {
-      // notification.success({
-      //   message: 'Success',
-      //   description: 'Confirm your email to continue',
-      // })
       return dispatch(register(formData))
     }
   }
